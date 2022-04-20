@@ -3,4 +3,10 @@ from . import views
 
 app_name = 'employee_app'
 
-urlpatterns = []
+urlpatterns = [
+    path(
+        '',
+        views.IndexTemplateView.as_view(),
+        name='index'
+    ),
+]
