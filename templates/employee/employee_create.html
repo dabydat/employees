@@ -11,11 +11,11 @@ Employees List
 
 <div class="container">
     <div class="row justify-content-around">
-        <p class="h1 mt-4 text-center">Employee Edit</p>
+        <p class="h1 mt-4 text-center">Register a Employee</p>
         <form method="POST" class="col-8" enctype="multipart/form-data">
             {% csrf_token %}
             {{form.as_p}}
-            <button type="submit" class="btn btn-success">Actualizar</button>
+            <button type="submit" class="btn btn-success">Submit</button>
         </form>
 
     </div>

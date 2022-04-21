@@ -1,3 +1,4 @@
+from venv import create
 from .forms import EmployeeForm
 from .models import Employee
 
@@ -41,4 +42,11 @@ class EmployeeDeleteView(DeleteView):
     model = Employee
     template_name = "employee/employee_delete.html"
     context_object_name = 'employee'
+    success_url = reverse_lazy('employee_app:employees_list')
+
+
+class EmployeeCreateView(CreateView):
+    model = Employee
+    template_name = "employee/employee_create.html"
+    form_class = EmployeeForm
     success_url = reverse_lazy('employee_app:employees_list')
