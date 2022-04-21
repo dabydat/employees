@@ -34,4 +34,9 @@ urlpatterns = [
         views.EmployeeCreateView.as_view(),
         name='employee_create'
     ),
+    path(
+        'employees/<short_name>',
+        views.EmployeesByDepartmentListView.as_view(),
+        name='employees_by_department'
+    ),
 ]

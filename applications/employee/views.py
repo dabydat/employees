@@ -50,3 +50,16 @@ class EmployeeCreateView(CreateView):
     template_name = "employee/employee_create.html"
     form_class = EmployeeForm
     success_url = reverse_lazy('employee_app:employees_list')
+
+
+class EmployeesByDepartmentListView(ListView):
+    model = Employee
+    template_name = "employee/employees_by_department.html"
+    context_object_name = 'employees'
+
+    def get_queryset(self):
+        department_short_name = self.kwargs['short_name']
+        queryset = Employee.objects.filter(
+            department__short_name=department_short_name
+        )
+        return queryset

@@ -30,7 +30,8 @@ Department List
                         <td>{{department.name}}</td>
                         <td>{{department.short_name}}</td>
                         <td>
-                            <a href="{% url 'department_app:new_department' %}" class="btn btn-info ml-1 mb-1">See
+                            <a href="{% url 'employee_app:employees_by_department' department.short_name %}"
+                                class="btn btn-info ml-1 mb-1">See
                                 Employees</a>
                         </td>
                     </tr>
