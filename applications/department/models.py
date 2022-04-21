@@ -17,4 +17,4 @@ class Department(models.Model):
 
     def __str__(self):
         """Unicode representation of Department."""
-        return str(self.id) + ' ' + self.name + ' ' + self.short_name
+        return self.name

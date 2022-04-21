@@ -1,8 +1,14 @@
-from django.shortcuts import render
+from .forms import EmployeeForm
 from .models import Employee
+
+from django.urls import reverse_lazy
+
 from django.views.generic import (TemplateView,
                                   ListView,
                                   DetailView,
+                                  UpdateView,
+                                  DeleteView,
+                                  CreateView
                                   )
 
 # Create your views here.
@@ -22,3 +28,10 @@ class EmployeeDetailView(DetailView):
     model = Employee
     template_name = "employee/employee_details.html"
     context_object_name = 'employee'
+
+
+class EmployeeUpdateView(UpdateView):
+    model = Employee
+    template_name = "employee/employee_update.html"
+    form_class = EmployeeForm
+    success_url = reverse_lazy('employee_app:employees_list')

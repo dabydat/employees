@@ -15,8 +15,13 @@ urlpatterns = [
         name='employees_list'
     ),
     path(
-        'employees/<pk>',
+        'employee/<pk>',
         views.EmployeeDetailView.as_view(),
         name='employee_details'
+    ),
+    path(
+        'employee_update/<pk>',
+        views.EmployeeUpdateView.as_view(),
+        name='employee_update'
     ),
 ]

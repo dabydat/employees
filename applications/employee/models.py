@@ -17,7 +17,7 @@ class Skills(models.Model):
 
     def __str__(self):
         """Unicode representation of Skills."""
-        return str(self.id) + ' ' + self.skill
+        return self.skill
 
 
 class Employee(models.Model):
