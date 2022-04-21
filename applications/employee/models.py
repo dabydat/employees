@@ -36,9 +36,9 @@ class Employee(models.Model):
 
     name = models.CharField('First Name', max_length=60)
     last_name = models.CharField('Last Name', max_length=60)
-    age = models.IntegerField('Age')
+    age = models.IntegerField('Age', null=True, blank=True)
     id_number = models.IntegerField(
-        'ID Number', unique=True, blank=False, null=False)
+        'ID Number', unique=True, blank=True, null=True)
     job_name = models.CharField('Job Name', max_length=60, choices=JOB_CHOICES)
     image = models.ImageField(
         'Employee Avatar', upload_to='employee', blank=True, null=True)

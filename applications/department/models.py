@@ -6,8 +6,9 @@ from django.db import models
 class Department(models.Model):
     """Model definition for Department."""
 
-    name = models.CharField('Department Name', max_length=60)
-    short_name = models.CharField('Department Acronym', max_length=30)
+    name = models.CharField('Department Name', max_length=60, unique=True)
+    short_name = models.CharField(
+        'Department Acronym', max_length=30, unique=True)
 
     class Meta:
         """Meta definition for Department."""
