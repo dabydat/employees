@@ -12,6 +12,15 @@ Employees List
 <div class="container">
     <div class="row">
         <p class="h1 text-center mt-3">Employees List</p>
+        <form action="" class="row g-2" method="GET">
+            {% csrf_token %}
+            <div class="col-8">
+                <input type="text" id="kword" name="kword" class="form-control" placeholder="Buscar Empleado">
+            </div>
+            <div class="col-4">
+                <button class="btn btn-primary" type="submit">Buscar empleado</button>
+            </div>
+        </form>
         <div class="col-12 mt-3">
             <table class="table table-striped">
                 <thead>

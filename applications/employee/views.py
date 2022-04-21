@@ -1,3 +1,4 @@
+from multiprocessing import context
 from venv import create
 from .forms import EmployeeForm
 from .models import Employee
@@ -23,6 +24,13 @@ class EmployeeListView(ListView):
     model = Employee
     template_name = "employee/employees_list.html"
     context_object_name = 'employees'
+
+    def get_queryset(self):
+        kword = self.request.GET.get('kword', '')
+        queryset = Employee.objects.filter(
+            name__icontains=kword
+        )
+        return queryset
 
 
 class EmployeeDetailView(DetailView):
