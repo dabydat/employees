@@ -9,4 +9,9 @@ urlpatterns = [
         views.IndexTemplateView.as_view(),
         name='index'
     ),
+    path(
+        'employees/',
+        views.EmployeeListView.as_view(),
+        name='employees_list'
+    ),
 ]

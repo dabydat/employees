@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Employees List
+{% endblock title %}
+
+
+{% block content %}
+{% include 'includes/header.html' %}
+<h1>lista de empleados</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">ID Number</th>
+                        <th scope="col">Job Name</th>
+                        <th scope="col">Department Name</th>
+                        <th scope="col">Skills</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for employee in employees %}
+                    <tr>
+                        <th scope="row">{{employee.id}}</th>
+                        <td>{{employee.name}}</td>
+                        <td>{{employee.last_name}}</td>
+                        <td>{{employee.id_number}}</td>
+                        <!-- Usar unicamente cuando el campo es CHOICES -->
+                        <td>{{employee.get_job_name_display}}</td>
+                        <!-- En caso contrario, se desestructura hasta acceder al valor que queremos -->
+                        <td>{{employee.department.name}}</td>
+                        <td>
+                            {% for skill in employee.skills.all %}
+                            <!-- <p>{{skill.skill}}.</p> -->
+                            <p>{{skill.id}}-{{skill.skill}}</p>
+
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
