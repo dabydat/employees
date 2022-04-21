@@ -19,9 +19,16 @@
                         href="{% url 'employee_app:employees_list' %}">Employee
                         List</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                        href="{% url 'department_app:departments_list' %}">Departments List</a>
+                </li>
             </ul>
-            <form class="d-flex">
-                <a href="{% url 'employee_app:employee_create' %}" class="btn btn-outline-success">New Employee</a>
+            <form>
+                <a href="{% url 'employee_app:employee_create' %}" class="btn btn-outline-success">New
+                    Employee</a>
+                <a href="{% url 'department_app:new_department' %}" class="btn btn-outline-primary">New
+                    Department</a>
             </form>
         </div>
     </div>
