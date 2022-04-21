@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Employee
 from django.views.generic import (TemplateView,
                                   ListView,
-                                  DetailView
+                                  DetailView,
                                   )
 
 # Create your views here.
