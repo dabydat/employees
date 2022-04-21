@@ -10,7 +10,8 @@ from .models import Department
 class Admin(admin.ModelAdmin):
     '''Admin View for '''
 
-    list_display = ('name',
+    list_display = ('id',
+                    'name',
                     'short_name'
                     )
     # list_filter = ('',)

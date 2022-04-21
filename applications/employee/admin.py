@@ -2,14 +2,21 @@ from django.contrib import admin
 from .models import Employee, Skills
 
 # Register your models here.
-admin.site.register(Skills)
+
+
+@admin.register(Skills)
+class SkillsAdmin(admin.ModelAdmin):
+    '''Admin View for Skills'''
+
+    list_display = ('id', 'skill', )
 
 
 @admin.register(Employee)
 class Admin(admin.ModelAdmin):
     '''Admin View for '''
 
-    list_display = ('name',
+    list_display = ('id',
+                    'name',
                     'last_name',
                     'age',
                     'id_number',
@@ -19,10 +26,3 @@ class Admin(admin.ModelAdmin):
 
     def department_name(self, obj):
         return obj.department.name
-    # list_filter = ('',)
-    # inlines = []
-    # raw_id_fields = ('',)
-    # readonly_fields = ('',)
-    # search_fields = ('',)
-    # date_hierarchy = ''
-    # ordering = ('',)

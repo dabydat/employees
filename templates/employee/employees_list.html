@@ -23,6 +23,7 @@ Employees List
                         <th scope="col">Job Name</th>
                         <th scope="col">Department Name</th>
                         <th scope="col">Skills</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,6 +42,9 @@ Employees List
                             <p>{{skill.id}}-{{skill.skill}}</p>
 
                             {% endfor %}
+                        </td>
+                        <td>
+                            <a href="{% url 'employee_app:employee_details' employee.id %}" class="btn btn-info">Ver</a>
                         </td>
                     </tr>
                     {% endfor %}
