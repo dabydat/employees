@@ -35,3 +35,10 @@ class EmployeeUpdateView(UpdateView):
     template_name = "employee/employee_update.html"
     form_class = EmployeeForm
     success_url = reverse_lazy('employee_app:employees_list')
+
+
+class EmployeeDeleteView(DeleteView):
+    model = Employee
+    template_name = "employee/employee_delete.html"
+    context_object_name = 'employee'
+    success_url = reverse_lazy('employee_app:employees_list')

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Employees List
+{% endblock title %}
+
+
+{% block content %}
+{% include 'includes/header.html' %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <div class="card text-center mt-5">
+                <div class="card-header">
+                    <strong>Eliminar Usuario</strong>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{employee.name}}
+                        {{employee.last_name}}</h5>
+                    <p class="card-text">¿Está seguro que desea eliminar este usuario?</p>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-outline-danger">
+                            Si, eliminar
+                        </button>
+                        <a href="{% url 'employee_app:employees_list' %}" class="btn btn-primary">Volver atrás</a>
+                    </form>
+
+                </div>
+                <div class="card-footer text-muted">
+                    <span class="badge bg-info text-dark">
+                        THINK BEFORE ACT
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
